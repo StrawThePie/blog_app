@@ -1,25 +1,30 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>{% block title %}My Blog{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta charset="utf-8">
+  <title>{% block title %}My Blog{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-<header>
+  <header>
     <h1><a href="{{ url_for('home') }}">My Personal Blog</a></h1>
     <nav>
-        <a href="{{ url_for('home') }}">Home</a>
-        <!-- admin links will go here later -->
+      <a href="{{ url_for('home') }}">Home</a>
+      {% if session.get('is_admin') %}
+        <a href="{{ url_for('admin_dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+      {% endif %}
     </nav>
-</header>
+  </header>
 
-<main>
+  <main>
     {% block content %}{% endblock %}
-</main>
+  </main>
 
-<footer>
+  <footer>
     <p>&copy; 2026 My Blog</p>
-</footer>
+  </footer>
 </body>
 </html>
