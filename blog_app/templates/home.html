@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-</body>
-</html>
+{% block title %}Home - My Blog{% endblock %}
+
+{% block content %}
+    <h2>Latest Articles</h2>
+
+    {% if articles %}
+        <ul>
+            {% for article in articles %}
+                <li>
+                    <strong>{{ article.title }}</strong>
+                    <span>({{ article.published }})</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No articles yet. Check back soon!</p>
+    {% endif %}
+{% endblock %}
