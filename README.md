@@ -3,6 +3,9 @@
 A simple personal blog built with Flask that lets you write, edit, and delete articles.  
 Content is stored as JSON files on the filesystem instead of a database, so the whole project stays lightweight and easy to understand.
 
+Created for https://roadmap.sh/projects/personal-blog
+___
+
 ## Features
 
 - Guest (public) section:
@@ -18,6 +21,8 @@ Content is stored as JSON files on the filesystem instead of a database, so the 
 - No JavaScript required:
   - All pages rendered with Flask + Jinja2 templates and basic HTML/CSS.
 
+___
+
 ## Tech Stack
 
 - Python
@@ -25,6 +30,8 @@ Content is stored as JSON files on the filesystem instead of a database, so the 
 - Jinja2 (HTML templating)
 - HTML & CSS (frontend)
 - JSON files on the filesystem for storage
+
+___
 
 ## Project Structure
 
